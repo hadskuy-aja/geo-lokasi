@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ubah Lokasi</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <strong>Ubah Lokasi</strong>
+      </div>
+      <label class="switch" title="Aktif / mati">
+        <input type="checkbox" id="toggle" />
+        <span class="track"><span class="knob"></span></span>
+        <span class="switch-text" id="toggle-text">Mati</span>
+      </label>
+    </header>
+
+    <div class="search">
+      <input
+        type="search"
+        id="search"
+        placeholder="Cari tempat, misal: Kuta Bali"
+        autocomplete="off"
+      />
+      <button id="search-btn" type="button" title="Cari">Cari</button>
+    </div>
+    <ul class="results" id="results" hidden></ul>
+
+    <div class="map-wrap">
+      <div class="map" id="map"></div>
+      <div class="map-controls">
+        <button id="zoom-in" type="button" title="Perbesar">+</button>
+        <button id="zoom-out" type="button" title="Perkecil">&minus;</button>
+      </div>
+      <div class="map-hint">Klik peta untuk menaruh titik</div>
+      <a
+        class="map-credit"
+        href="https://www.openstreetmap.org/copyright"
+        target="_blank"
+        rel="noreferrer"
+        >&copy; OpenStreetMap</a
+      >
+    </div>
+
+    <div class="fields">
+      <label class="field">
+        <span>Lintang (lat)</span>
+        <input type="text" id="lat" inputmode="decimal" />
+      </label>
+      <label class="field">
+        <span>Bujur (lon)</span>
+        <input type="text" id="lon" inputmode="decimal" />
+      </label>
+      <label class="field field-sm">
+        <span>Akurasi (m)</span>
+        <input type="number" id="accuracy" min="1" max="10000" step="1" />
+      </label>
+    </div>
+
+    <label class="check">
+      <input type="checkbox" id="drift" />
+      <span>Goyangkan titik sedikit tiap pembacaan</span>
+    </label>
+
+    <div class="actions">
+      <button id="apply" class="primary" type="button">Pakai lokasi ini</button>
+      <button id="reset" type="button">Lokasi asli</button>
+    </div>
+
+    <p class="status" id="status">Pilih titik di peta lalu klik "Pakai lokasi ini".</p>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
